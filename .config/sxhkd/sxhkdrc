@@ -1,0 +1,55 @@
+ 
+# DWM SXKHD config
+meta + Escape
+	pkill -USR1 -x sxhkd; shxkd
+# Vol.
+control + {F1,F2}
+	 pamixer --sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1 --allow-boost {-i,-d} 5
+control + F3
+	 pamixer --sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1 -t
+# Printscreen
+{_,shift +} Print
+	 $HOME/.config/dwm/prtscr.sh {sel,full}
+# outside of dwm things in general
+alt + b
+	 firefox
+super + shift + Return
+	 dmenu_run
+super + Return
+ 	alacritty
+ctrl + alt + Escape
+ 	sudo poweroff
+# inside of dwm
+super + shift + c
+ 	dwmc killclient
+super + {h,l}
+ 	dwmc setmfact {-,+}0.025
+super {_, + shift} + {1,2,3,4,5,6,7,8,9}
+ 	dwmc {viewex,tagex} {0,1,2,3,4,5,6,7,8}
+alt + {control,shift} + {1,2}
+	dwmc {focusnthmon,tagnthmon} {0,1}
+super + shift + {h,l}
+	dwmc incnmaster {+,-}1
+alt + p 
+ 	dwmc zoom
+super + shift + q
+	dwmc quit
+super + b
+ 	dwmc togglebar
+super + {equal,minus,shift + equal,shift + minus}
+ 	dwmc setgaps {+5,-5,GAP_RESET,GAP_TOGGLE}
+super + {j,k}
+ 	dwmc focusstack {+1,-1}
+# layouts
+super + {t,f,m}
+ 	dwmc setlayoutex {0,1,2}
+super + space
+ 	dwmc setlayout
+#windows
+super + shift + space
+	dwmc togglefloating
+super + shift + f
+ 	dwmc togglefullscr
+#recompile and restart
+super + shift + r
+	dwmc recomp /media/hdd1/projects/dwm-6.2
