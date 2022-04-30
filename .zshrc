@@ -16,4 +16,4 @@ alias vim=nvim
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export GPG_TTY=$(tty)
-export PS1="[%F{129}%n%f@%F{092}%m%f] [%F{039}%~%f] [%T] %F{green}>%f "	
+export PS1="[%F{118}%n%f@%F{184}%m%f] [%F{039}%~%f] [%T] %F{green}>%f "	
