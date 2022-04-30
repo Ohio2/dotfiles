@@ -1,0 +1,15 @@
+deamonify(){
+ mkdir -p $HOME/.local/share/dwm/deamonify/logs
+ $($1) > $HOME/.local/share/dwm/deamonify/logs/$1_$(date +'%d/%m/%Y_%H:%M')
+}
+xsetroot_gentext(){
+	echo " [vol: $(pamixer --get-volume-human --sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1 )] | [$(date +'%d/%m/%Y, %a')] | [$(date +'%H:%M')] "
+}
+xsetroot_gen(){
+	while ps -C dwm >/dev/null; do
+		xsetroot -name "$(xsetroot_gentext)"
+	done
+}
+xsetroot_die(){
+	pkill xsetroot
+}
