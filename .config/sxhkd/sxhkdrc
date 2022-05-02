@@ -1,7 +1,7 @@
  
 # DWM SXKHD config
-meta + Escape
-	pkill -USR1 -x sxhkd; shxkd
+super + Escape
+	pkill -USR1 -x sxhkd; sxhkd
 # Vol.
 control + {F1,F2}
 	 pamixer --sink alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1 --allow-boost {-i,-d} 5
@@ -30,7 +30,7 @@ alt + {control,shift} + {1,2}
 	dwmc {focusnthmon,tagnthmon} {0,1}
 super + shift + {h,l}
 	dwmc incnmaster {+,-}1
-alt + p 
+super + p 
  	dwmc zoom
 super + shift + q
 	dwmc quit
@@ -52,4 +52,4 @@ super + shift + f
  	dwmc togglefullscr
 #recompile and restart
 super + shift + r
-	dwmc recomp /media/hdd1/projects/dwm-6.2
+  dwmc recompile /media/hdd1/projects/dwm-6.2; dwmc quit 1
